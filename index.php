@@ -1,32 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-    <title>Document</title>
+    <title>Tienda de Computación</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <?php include_once 'Templates/header.php'; ?>
 
-<?php
-include_once 'Templates/header.php';
-  $db = new PDO('mysql:host=localhost;'.'dbname=Prueba;charset=utf8', 'root', '');
-  $query = $db->prepare('SELECT * FROM Transactions');
-  $query->execute();
-  $transactions = $query->fetchAll(PDO::FETCH_OBJ);
- 
-  echo "<ul>";
-  foreach($transactions as $transaction){
-     $query = $db->prepare('SELECT * FROM Products WHERE Product = ?');
-     $query->execute([$transaction->Product]);
-     $product = $query->fetch(PDO::FETCH_OBJ);
-     echo '<li>' . $transaction->Channel . ', ' . $transaction->Product 
-     . ', ' . $transaction->Price . ', ' . $product->Material . ', ' . 
-     $product->Medium . '</li>';
-  }
+    <section class="productos">
+        <article class="producto">
+            <img src="imagen1.jpg" alt="Portátil">
+            <h2>Portátil</h2>
+            <p>Descripción del producto.</p>
+            <p>Precio: $999</p>
+            <button>Comprar</button>
+        </article>
 
-  echo "</ul>";
-include_once 'Templates/footer.php';
-?>
+        <article class="producto">
+            <img src="imagen2.jpg" alt="Monitor">
+            <h2>Monitor</h2>
+            <p>Descripción del producto.</p>
+            <p>Precio: $299</p>
+            <button>Comprar</button>
+        </article>
+
+        <!-- Agrega más productos aquí -->
+
+    </section>
+
+    <?php include_once 'Templates/footer.php'; ?>
 </body>
 </html>
