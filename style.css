@@ -1,4 +1,4 @@
-/* Estilos generales */
+/* Estilos generales del header y la pagina */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -29,7 +29,7 @@ nav a {
     margin-right: 30px;
 }
 
-/* Estilos de la sección de productos */
+/* Estilos de la sección de Index */
 .productos {
     display: flex;
     flex-wrap: wrap;
@@ -50,7 +50,7 @@ nav a {
     max-width: 100%;
 }
 
-/* Botones productos */
+/* Botones Secciones */
 .button_slide {
     color: #21a2ac;
     border: 2px solid #ffdd20;

@@ -7,8 +7,8 @@
     <title>Memorias RAM</title>
 </head>
 <body>
-
 <?php include_once 'Templates/header.php'; ?>
+<h1>Memorias RAM</h1>
 
 <?php include_once 'Templates/footer.php'; ?>
 </body>

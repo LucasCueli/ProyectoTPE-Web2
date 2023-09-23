@@ -7,9 +7,11 @@
     <title>Plaquitas</title>
 </head>
 <body>
+<?php include_once 'Templates/header.php'; ?>
+
+<h1>Placas de video</h1>
 
 <?php
-include_once 'Templates/header.php';
 
 $db = new PDO('mysql:host=localhost;'.'dbname=Prueba;charset=utf8', 'root', '');
 $query = $db->prepare('SELECT * FROM Transactions');
@@ -27,8 +29,8 @@ foreach($transactions as $transaction){
 }
 
 echo "</ul>";
-
-include_once 'Templates/footer.php';
 ?>
+
+<?php include_once 'Templates/footer.php'; ?>
 </body>
 </html>

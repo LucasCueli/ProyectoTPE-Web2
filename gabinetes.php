@@ -9,6 +9,7 @@
 </head>
 <body>
     <?php include_once 'Templates/header.php'; ?>
+    <h1>Gabinetes</h1>
 
 
 
