@@ -15,7 +15,7 @@
             <h2>Procesadores</h2>
             <p>Estos chips están diseñados para realizar cálculos y tareas de procesamiento de datos en una máquina. Los procesadores ejecutan instrucciones de software, manipulan datos y gestionan diversas operaciones que permiten que una computadora funcione de manera eficiente y realice una amplia gama de tareas.</p>
             <div class="outer">
-                <div class="button_slide slide_left">Ir a la Seccion</div>
+                <div class="button_slide slide_left"><a href="procesadores.php">Ir a la Seccion</a></div>
             </div>
         </article>
 
@@ -24,7 +24,7 @@
             <h2>Placas de Video</h2>
             <p>Estas tarjetas están diseñadas para procesar y renderizar imágenes y vídeos en pantalla. Permiten a los usuarios disfrutar de gráficos de alta calidad, jugar videojuegos exigentes, realizar tareas de diseño y edición de video, y ejecutar aplicaciones que requieren un rendimiento gráfico superior.</p>
             <div class="outer">
-                <div class="button_slide slide_left">Ir a la Seccion</div>
+                <div class="button_slide slide_left"><a href="placas.php">Ir a la Seccion</a></div>
             </div>
         </article>
 
@@ -33,16 +33,16 @@
             <h2>Memorias RAM</h2>
             <p>Se utiliza para almacenar temporalmente datos y programas que están en uso en un momento dado. La RAM permite un acceso rápido a la información, lo que acelera significativamente el rendimiento de la computadora.</p>
             <div class="outer">
-                <div class="button_slide slide_left">Ir a la Seccion</div>
+                <div class="button_slide slide_left"><a href="ram.php">Ir a la Seccion</a></div>
             </div>
         </article>
 
         <article class="producto">
             <img src="https://mauricomputacion.com.ar/images/productos/galerias/22850/1002_1733048064.png" alt="Gabinetes">
             <h2>Gabinetes</h2>
-            <p> Están diseñados para proteger y organizar estos componentes, proporcionando un entorno seguro y adecuado para el funcionamiento de la computadora.</p>
+            <p>Están diseñados para proteger y organizar estos componentes, proporcionando un entorno seguro y adecuado para el funcionamiento de la computadora</p>
             <div class="outer">
-                <div class="button_slide slide_left">Ir a la Seccion</div>
+                <div class="button_slide slide_left"><a href="gabinetes.php">Ir a la Seccion</a></div>
             </div>
         </article>
 

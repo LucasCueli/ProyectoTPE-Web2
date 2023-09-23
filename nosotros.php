@@ -7,11 +7,8 @@
     <title>Nosotros</title>
 </head>
 <body>
+<?php include_once 'Templates/header.php';?>
 
-<?php
-include_once 'Templates/header.php';
-
-include_once 'Templates/footer.php';
-?>
+<?php include_once 'Templates/footer.php';?>
 </body>
 </html>
