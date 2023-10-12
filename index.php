@@ -7,7 +7,29 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <?php include_once 'Templates/header.php'; ?>
+    <?php include_once 'Templates/header.phtml'; ?>
+
+    <?php    
+    //abro una nueva sesion
+   session_start();
+
+   //Si esta logueado lo saludo
+   if(isset($_SESSION["logueado"]) && $_SESSION["logueado"] === true)
+       echo "Bienvenido de vuelta: ". 
+        $_SESSION["username"].
+        "<form method='POST' action='login.php'>
+            <input type='submit' name='logout' value='Cerrar sesion'>
+        </form>" ;
+   else { } 
+
+   if (isset($_POST['logout'])) {
+    // Destruir la sesión y redirigir al usuario a la página de inicio de sesión
+    session_destroy();
+    header('Location: login.php');
+    exit();
+}
+
+?>
 
     <section class="productos">
         <article class="producto">
