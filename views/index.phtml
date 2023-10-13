@@ -1,37 +1,9 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tienda de Computación</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <?php include_once 'Templates/header.phtml'; ?>
-
-    <?php    
-    //abro una nueva sesion
-   session_start();
-
-   //Si esta logueado lo saludo
-   if(isset($_SESSION["logueado"]) && $_SESSION["logueado"] === true)
-       echo "Bienvenido de vuelta: ". 
-        $_SESSION["username"].
-        "<form method='POST' action='login.php'>
-            <input type='submit' name='logout' value='Cerrar sesion'>
-        </form>" ;
-   else { } 
-
-   if (isset($_POST['logout'])) {
-    // Destruir la sesión y redirigir al usuario a la página de inicio de sesión
-    session_destroy();
-    header('Location: login.php');
-    exit();
-}
-
+<?php 
+    $titulo = 'Inicio';
+    include_once('../templates/header.tpl'); 
+    include_once('../templates/navbar.tpl'); 
 ?>
-
-    <section class="productos">
+<section class="productos">
         <article class="producto">
             <img src="https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8UHJvY2VzYWRvcmVzfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60" alt="Procesador">
             <h2>Procesadores</h2>
@@ -67,11 +39,5 @@
                 <div class="button_slide slide_left"><a href="gabinetes.php">Ir a la Seccion</a></div>
             </div>
         </article>
-
-        <!-- Agrega más productos aquí -->
-
     </section>
-
-    <?php include_once 'Templates/footer.php'; ?>
-</body>
-</html>
+<?php include_once('../templates/footer.tpl'); ?>

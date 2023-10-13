@@ -16,5 +16,13 @@
       <a href="nosotros.php">Contacto</a>
       <a href="login.php">Iniciar Sesion</a>
     </nav>
+    <?php 
+        session_start();
+        if(isset($_SESSION["logueado"]) && $_SESSION["logueado"] === true){
+          echo "Sesion iniciada como: " . $_SESSION["USERNAME"];
+        ;} else {
+          echo "<a href='login.phtml'>Inicie sesion</a>";
+        }
+      ?>
   </div>
 </header>
