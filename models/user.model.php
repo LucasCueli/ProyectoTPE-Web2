@@ -1,5 +1,5 @@
 <?php
-    class StoreModel {
+    class UserModel {
 
         private $db;
 

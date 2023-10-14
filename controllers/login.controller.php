@@ -1,15 +1,23 @@
 <?php
-    include_once('../views/login.phtml');
-    include_once('../models/user.model.php');
+    include_once('./views/login.view.php');
+    include_once('./models/user.model.php');
 
 class LoginController {
-    private $view;
     private $model;
+    private $view;
 
     public function __construct() {
-        $this->model = new StoreModel();
+        $this->model = new UserModel();
+        $this->view = new LoginView();
     }
 
+    public function mostrarLogin(){
+        $this->view->showLogin();
+    }
+
+    public function register(){
+        $this->view->showRegister();
+    }
 
     public function verifyUser() {
         $email = $_POST['username'];
@@ -26,7 +34,7 @@ class LoginController {
             $_SESSION['ID_USER'] = $user->id_usuario;
             $_SESSION['USERNAME'] = $user->email;
 
-            header('Location: ../views/index.phtml');
+            header('Location: ' . BASE_URL . 'index');
         } else {
             echo("Login incorrecto");
         }
@@ -39,6 +47,5 @@ class LoginController {
     }
 
 }
-    $controller = new LoginController();
-    $controller->verifyUser();
+
 
