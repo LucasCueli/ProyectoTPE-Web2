@@ -1,14 +1,16 @@
 <?php
     include_once('./views/page.view.php');
-    include_once('./models/page.model.php');
+    include_once('./models/products.model.php');
 
-    class pageController {
-        private $model;
+    class ProductController {
+
         private $view;
+        private $model;
 
         function __construct(){
-            //$this->model = new pageModel();
+
             $this->view = new pageView();
+            $this->model = new ProductsModel();
         }
 
         public function mostrarIndex(){
@@ -35,6 +37,15 @@
             $this->view->showPageNosotros();
         }
 
+        public function checkLoggedIn() {
+            if (!isset($_SESSION["ID_USER"])) {
+                header('Location: ' . LOGIN);
+            }
+        }
+
+        public function showProcesadores(){
+            $procesadores = $this->model->getAllProcesadores();
+            $this->view->showProcesadores();
+        }
     }
 
-?>

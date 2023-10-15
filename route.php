@@ -1,6 +1,6 @@
 <?php
     require_once('controllers/login.controller.php');
-    require_once('controllers/page.controller.php');
+    require_once('controllers/products.controller.php');
 
     // CONSTANTES PARA RUTEO
     define("BASE_URL", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/');
@@ -11,31 +11,35 @@
     $action = $_GET['action'];
     }
 
-    $params = explode('/' , $action);
+    $partesURL = explode('/' , $action);
 
-    switch ($params[0]) {
+    switch ($partesURL[0]) {
         case 'index':
-            $controller = new pageController();
+            $controller = new ProductController();
             $controller->mostrarIndex();
             break;
         case 'procesadores':
-            $controller = new pageController();
+            $controller = new ProductController();
             $controller->mostrarProcesadores();
+            $controller->checkLoggedIn();
             break;
         case 'placas':
-            $controller = new pageController();
+            $controller = new ProductController();
             $controller->mostrarPlacas();
+            $controller->checkLoggedIn();
             break;
         case 'rams':
-            $controller = new pageController();
+            $controller = new ProductController();
             $controller->mostrarRams();
+            $controller->checkLoggedIn();
             break;
         case 'gabinetes':
-            $controller = new pageController();
+            $controller = new ProductController();
             $controller->mostrarGabinetes();
+            $controller->checkLoggedIn();
             break;
         case 'nosotros':
-            $controller = new pageController();
+            $controller = new ProductController();
             $controller->mostrarNosotros();
             break;
         case 'login':

@@ -1,5 +1,4 @@
-<header>
-  
+  <header>
     <nav>
       <a href="index">Inicio</a>
       <a href="procesadores">Procesadores</a>
@@ -10,7 +9,7 @@
     </nav>
     <br>
     <?php 
-        session_start();
+    session_start();
         if(isset($_SESSION["logueado"]) && $_SESSION["logueado"] === true){
           echo "Sesion iniciada como: " . $_SESSION["USERNAME"];
           echo "<br>";
