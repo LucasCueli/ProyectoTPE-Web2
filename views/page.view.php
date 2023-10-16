@@ -40,6 +40,7 @@
                 echo '<article class="producto">' . $proce->Marca . '<h2>' . $proce->Modelo . '</h2>' .  '<p>' . $proce->Socket . '<br>' . $proce->Valor . '</p>' .'</article>';
             }
             echo '</section>';
+            include_once "./templates/footer.tpl" ; 
         }
 
         //articulos de graficas
@@ -50,6 +51,7 @@
                 echo '<article class="producto">' . $placa->Marca . '<h2>' . $placa->Modelo . '</h2>' .  '<p>' . $placa->Vram . '<br>' . $placa->Valor . '</p>' .'</article>';
             }
             echo '</section>';
+            include_once "./templates/footer.tpl" ; 
         }
 
         //articulos de rams
@@ -60,6 +62,7 @@
                 echo '<article class="producto">' . $ram->Marca . '<h2>' . $ram->Tamaño . '</h2>' .  '<p>' . $ram->Generacion . '<br>' . $ram->Velocidad . '<br>' . $ram->Valor . '</p>' . '</article>';
             }
             echo '</section>';
+            include_once "./templates/footer.tpl" ; 
         }
 
         //articulos de gabinetes
@@ -70,6 +73,7 @@
                 echo '<article class="producto">' . $gabinete->Marca . '<h2>' . $gabinete->Modelo . '</h2>' .  '<p>' . $gabinete->Tamaño . '<br>' . $gabinete->Valor . '</p>' .'</article>';
             }
             echo '</section>';
+            include_once "./templates/footer.tpl" ; 
         }
     }
 
