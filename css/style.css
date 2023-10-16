@@ -1,6 +1,8 @@
 /* Estilos body */
 body{
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 /* Aplicamos estilos al encabezado (header) */
@@ -51,6 +53,14 @@ a:visited{
 }
 
 /* Estilos de la sección de Index */
+.titulo{
+    display: flex;
+    justify-content: center;
+    font-size: 50px;
+    font-family: 'Times New Roman', Times, serif;
+    color: #d31dda;
+}
+
 .productos {
     display: flex;
     flex-wrap: wrap;
@@ -81,14 +91,14 @@ a:visited{
     font-size: 14px;
     letter-spacing: 1px;
     cursor: pointer;
-    box-shadow: inset 0 0 0 0 #EEEEEE;
+    box-shadow: inset 0 0 0 0 #770d0d;
     -webkit-transition: ease-out 0.4s;
     -moz-transition: ease-out 0.4s;
     transition: ease-out 0.4s;
 }
 
 .slide_left:hover {
-    box-shadow: inset 0 0 0 50px #EEEEEE;
+    box-shadow: inset 0 0 0 50px #810606;
 }
   
 #outer {
@@ -125,9 +135,10 @@ a:visited{
 }
 
 h1 {
-    color: #fff;
+    color: #ffffff;
     text-transform: uppercase;
     margin-bottom: 20px;
+    font-size: 2em;
 }
 
 .campo {
@@ -178,8 +189,23 @@ textarea:focus {
 }
 
 
+/* Pagina Sobre nosotros */
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2em;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+p {
+    line-height: 1.6;
+}
+
 /* Estilos del footer */
 footer {
+    margin-top: 15px;
     background-color: #00ADB5;
     color: #fff;
     text-align: center;
