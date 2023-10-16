@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 11-10-2023 a las 21:46:01
+-- Tiempo de generación: 16-10-2023 a las 19:01:45
 -- Versión del servidor: 10.4.28-MariaDB
--- Versión de PHP: 8.2.4
+-- Versión de PHP: 8.0.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -29,6 +29,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `compras` (
   `ID_compra` int(11) NOT NULL,
+  `ID_usuario` int(11) NOT NULL,
   `ID_gabinete` int(11) NOT NULL,
   `ID_graficas` int(11) NOT NULL,
   `ID_procesadores` int(11) NOT NULL,
@@ -51,6 +52,13 @@ CREATE TABLE `gabinetes` (
   `Valor` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Volcado de datos para la tabla `gabinetes`
+--
+
+INSERT INTO `gabinetes` (`ID_gabinete`, `Marca`, `Modelo`, `Tamaño`, `Valor`) VALUES
+(1, 'NZXT', 'H5 Flow Compact ATX', 'Mid-Tower', 85);
+
 -- --------------------------------------------------------
 
 --
@@ -70,7 +78,7 @@ CREATE TABLE `graficas` (
 --
 
 INSERT INTO `graficas` (`ID_graficas`, `Marca`, `Modelo`, `Vram`, `Valor`) VALUES
-(10001, 'MSI', 'RTX 3080 Ventus', '10 GB', 800);
+(10002, 'NVIDIA', 'GeForce RTX 3080', '10GB GDDR6X', 420);
 
 -- --------------------------------------------------------
 
@@ -91,9 +99,8 @@ CREATE TABLE `procesadores` (
 --
 
 INSERT INTO `procesadores` (`ID_procesadores`, `Marca`, `Modelo`, `Socket`, `Valor`) VALUES
-(10001, 'Intel', 'i7 12700', 'FCLGA1700', 360),
-(10002, 'Intel', 'i5 12600', 'FCLGA1700', 250),
-(10003, 'AMD', 'Ryzen 7 2700', 'am4', 300);
+(1, 'Intel', 'i7 12700', 'FCLGA1700', 360),
+(2, 'Intel', 'i7-10700', 'LGA 1200', 323);
 
 -- --------------------------------------------------------
 
@@ -109,6 +116,13 @@ CREATE TABLE `rams` (
   `Generacion` varchar(45) NOT NULL,
   `Valor` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `rams`
+--
+
+INSERT INTO `rams` (`ID_RAM`, `Marca`, `Tamaño`, `Velocidad`, `Generacion`, `Valor`) VALUES
+(1, 'Corsair Vengeance RGB Pro', '16GB (2x8GB)', '3200MHZ', 'DDR4', 50);
 
 -- --------------------------------------------------------
 
@@ -128,7 +142,8 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id_usuario`, `email`, `password`, `username`) VALUES
-(1, 'webadmin', '$2y$10$NLFFfBx0gkF3nuNLD/B1BuaTkVJ8wIr..WVphVctrv1f2R16dNSiu', '');
+(1, 'webadmin', '$2y$10$NLFFfBx0gkF3nuNLD/B1BuaTkVJ8wIr..WVphVctrv1f2R16dNSiu', ''),
+(3, 'Agustin', '$2y$10$gCMD83w1WBRS2Ur6lcLU/OmayLowSyYCoAllwXC8RUqc4jrNNmETW', '');
 
 --
 -- Índices para tablas volcadas
@@ -139,10 +154,11 @@ INSERT INTO `usuarios` (`id_usuario`, `email`, `password`, `username`) VALUES
 --
 ALTER TABLE `compras`
   ADD PRIMARY KEY (`ID_compra`),
-  ADD KEY `fk_compras_gabinetes` (`ID_gabinete`),
+  ADD KEY `fk_compras_usuarios` (`ID_usuario`),
   ADD KEY `fk_compras_procesadores` (`ID_procesadores`),
   ADD KEY `fk_compras_graficas` (`ID_graficas`),
-  ADD KEY `fk_compras_rams` (`ID_ram`);
+  ADD KEY `fk_compras_rams` (`ID_ram`),
+  ADD KEY `fk_compras_gabinetes` (`ID_gabinete`);
 
 --
 -- Indices de la tabla `gabinetes`
@@ -179,10 +195,34 @@ ALTER TABLE `usuarios`
 --
 
 --
+-- AUTO_INCREMENT de la tabla `gabinetes`
+--
+ALTER TABLE `gabinetes`
+  MODIFY `ID_gabinete` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT de la tabla `graficas`
+--
+ALTER TABLE `graficas`
+  MODIFY `ID_graficas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10003;
+
+--
+-- AUTO_INCREMENT de la tabla `procesadores`
+--
+ALTER TABLE `procesadores`
+  MODIFY `ID_procesadores` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT de la tabla `rams`
+--
+ALTER TABLE `rams`
+  MODIFY `ID_RAM` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Restricciones para tablas volcadas
@@ -195,7 +235,8 @@ ALTER TABLE `compras`
   ADD CONSTRAINT `fk_compras_gabinetes` FOREIGN KEY (`ID_gabinete`) REFERENCES `gabinetes` (`ID_gabinete`),
   ADD CONSTRAINT `fk_compras_graficas` FOREIGN KEY (`ID_graficas`) REFERENCES `graficas` (`ID_graficas`),
   ADD CONSTRAINT `fk_compras_procesadores` FOREIGN KEY (`ID_procesadores`) REFERENCES `procesadores` (`ID_procesadores`),
-  ADD CONSTRAINT `fk_compras_rams` FOREIGN KEY (`ID_ram`) REFERENCES `rams` (`ID_RAM`);
+  ADD CONSTRAINT `fk_compras_rams` FOREIGN KEY (`ID_ram`) REFERENCES `rams` (`ID_RAM`),
+  ADD CONSTRAINT `fk_compras_usuarios` FOREIGN KEY (`ID_usuario`) REFERENCES `usuarios` (`id_usuario`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
