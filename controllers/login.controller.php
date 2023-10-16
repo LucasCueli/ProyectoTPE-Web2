@@ -40,6 +40,7 @@ class LoginController {
         }
     }
 
+    //registro un nuevo usuario en la base de datos
     public function userRegister(){
         if(!empty($_POST['email'])&& !empty($_POST['password'])){
             $userEmail=$_POST['email'];
@@ -50,8 +51,7 @@ class LoginController {
         }
     }
 
-    
-
+    //deslogueo a un usuario que tiene una sesion iniciada
     public function logout() {
         session_start();
         session_destroy();

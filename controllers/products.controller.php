@@ -13,6 +13,7 @@
             $this->model = new ProductsModel();
         }
 
+        //funciones para mostrar las paginas
         public function mostrarIndex(){
             $this->view->showPageIndex();
         }
@@ -37,12 +38,14 @@
             $this->view->showPageNosotros();
         }
 
+        //funcion para checkear que hay un usuario logueado
         public function checkLoggedIn() {
             if (!isset($_SESSION["ID_USER"])) {
                 header('Location: ' . LOGIN);
             }
         }
 
+        //funciones para mostrar los articulos de los productos
         public function showProcesadores(){
             $this->view->showArticuloProcesadores();
         }

@@ -7,6 +7,7 @@
             $this->model = new ProductsModel();
         }
 
+        //llamados a las paginas
         public function showPageIndex(){
             require('./templates/index.phtml');
         }
@@ -31,6 +32,7 @@
             require('./templates/nosotros.phtml');
         }
 
+        //articulos de procesadores
         public function showArticuloProcesadores(){
             echo "<section class='productos'>";
             $procesadores = $this->model->getAllProcesadores();
@@ -40,6 +42,7 @@
             echo '</section>';
         }
 
+        //articulos de graficas
         public function showArticuloGraficas(){
             echo "<section class='productos'>";
             $placas = $this->model->getAllGraficas();
@@ -49,6 +52,7 @@
             echo '</section>';
         }
 
+        //articulos de rams
         public function showArticuloRams(){
             echo "<section class='productos'>";
             $rams = $this->model->getAllRams();
@@ -58,6 +62,7 @@
             echo '</section>';
         }
 
+        //articulos de gabinetes
         public function showArticuloGabinetes(){
             echo "<section class='productos'>";
             $gabinetes = $this->model->getAllGabinetes();

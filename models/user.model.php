@@ -7,6 +7,7 @@
             $this->db = new PDO('mysql:host=localhost;dbname=tienda computacion;charset=utf8', 'root', '');
         }
 
+        //lista de usuarios guardados en la base de datos
         public function getByUsername($username) {
             $query = $this->db->prepare('SELECT * FROM usuarios WHERE email = ?');
             $query->execute(array($username));
