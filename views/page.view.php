@@ -54,7 +54,7 @@
             echo "<section class='productos'>";
             $procesadores = $this->model->getAllProcesadores();
             foreach($procesadores as $proce){
-                echo '<article class="producto">' . $proce->Marca . '<h2>' . $proce->Modelo . '</h2>' .  '<p>' . $proce->Socket . '<br>' . 'Precio (USD): $' . $proce->Valor . '<br>' . 'ID: ' . $proce->ID_procesadores . '</p>' .'</article>';
+                echo '<article class="producto">' . '<h2>' . $proce->Marca . '<h2>' . '<h2>' . $proce->Modelo . '</h2>' .  '<h3>' . $proce->Socket . '<br>' . '<br>' . '$' . $proce->Valor . '</h3>' . '<div class="button_slide slide_left"><a href="#">Añadir al carrito</a></div>' .'</article>';
             }
             echo '</section>';
         }
@@ -64,7 +64,7 @@
             echo "<section class='productos'>";
             $placas = $this->model->getAllGraficas();
             foreach($placas as $placa){
-                echo '<article class="producto">' . $placa->Marca . '<h2>' . $placa->Modelo . '</h2>' .  '<p>' . $placa->Vram . '<br>' . 'Precio (USD): $' . $placa->Valor . '<br>' . 'ID: ' . $placa->ID_graficas . '</p>' .'</article>';
+                echo '<article class="producto">' . $placa->Marca . '<h2>' . $placa->Modelo . '</h2>' .  '<p>' . $placa->Vram . '<br>' . $placa->Valor . '</p>' .'</article>';
             }
             echo '</section>';
         }
@@ -74,7 +74,7 @@
             echo "<section class='productos'>";
             $rams = $this->model->getAllRams();
             foreach($rams as $ram){
-                echo '<article class="producto">' . $ram->Marca . '<h2>' . $ram->Tamaño . '</h2>' .  '<p>' . $ram->Generacion . '<br>' . $ram->Velocidad . '<br>' . 'Precio (USD): $' . $ram->Valor . '<br>' . 'ID: ' . $ram->ID_RAM . '</p>' . '</article>';
+                echo '<article class="producto">' . $ram->Marca . '<h2>' . $ram->Tamaño . '</h2>' .  '<p>' . $ram->Generacion . '<br>' . $ram->Velocidad . '<br>' . $ram->Valor . '</p>' . '</article>';
             }
             echo '</section>';
         }
@@ -84,7 +84,7 @@
             echo "<section class='productos'>";
             $gabinetes = $this->model->getAllGabinetes();
             foreach($gabinetes as $gabinete){
-                echo '<article class="producto">' . $gabinete->Marca . '<h2>' . $gabinete->Modelo . '</h2>' .  '<p>' . $gabinete->Tamaño . '<br>' . 'Precio (USD): $' . $gabinete->Valor . '<br>' . 'ID: ' . $gabinete->ID_gabinete . '</p>' .'</article>';
+                echo '<article class="producto">' . $gabinete->Marca . '<h2>' . $gabinete->Modelo . '</h2>' .  '<p>' . $gabinete->Tamaño . '<br>' . $gabinete->Valor . '</p>' .'</article>';
             }
             echo '</section>';
         }
