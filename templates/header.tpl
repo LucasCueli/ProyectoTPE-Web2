@@ -26,10 +26,10 @@
                 <?php 
                   session_start();
                       if(isset($_SESSION["logueado"]) && $_SESSION["logueado"] === true){
-                        echo "<h2>" . "Sesion iniciada como: " . $_SESSION["USERNAME"] . "</h2>";
+                        echo "<h3>" . "Sesion iniciada como: " . $_SESSION["USERNAME"] . "</h3>";
                         echo "<a href='logout'>Cerrar sesion</a>";
                       ;} else {
-                       echo "<div class='login'>" ."<h2>" . "Sesion iniciada como invitado" . "</h2>" . "<a href='login'>Inicie sesion</a>" . "</div>";   
+                       echo "<div class='login'>" ."<h3>" . "Sesion iniciada como invitado" . "</h3>" . "<a href='login'>Inicie sesion</a>" . "</div>";   
                       }
                   ?>
           </div>

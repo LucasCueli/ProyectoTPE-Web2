@@ -138,7 +138,6 @@ h1 {
     color: #ffffff;
     text-transform: uppercase;
     margin-bottom: 20px;
-    font-size: 2em;
 }
 
 .campo {
@@ -190,6 +189,9 @@ textarea:focus {
 
 
 /* Pagina Sobre nosotros */
+h2{
+    font-size: 2em;
+}
 
 .container {
     max-width: 800px;
@@ -205,7 +207,8 @@ p {
 
 /* Estilos del footer */
 footer {
-    margin-top: 15px;
+    padding: 0;
+    margin-top: 150px;
     background-color: #00ADB5;
     color: #fff;
     text-align: center;
