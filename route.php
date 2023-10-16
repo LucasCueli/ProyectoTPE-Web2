@@ -27,16 +27,19 @@
         case 'placas':
             $controller = new ProductController();
             $controller->mostrarPlacas();
+            $controller->showGraficas();
             $controller->checkLoggedIn();
             break;
         case 'rams':
             $controller = new ProductController();
             $controller->mostrarRams();
+            $controller->showRams();
             $controller->checkLoggedIn();
             break;
         case 'gabinetes':
             $controller = new ProductController();
             $controller->mostrarGabinetes();
+            $controller->showGabinetes();
             $controller->checkLoggedIn();
             break;
         case 'nosotros':

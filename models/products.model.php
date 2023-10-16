@@ -8,10 +8,11 @@ class ProductsModel {
         $this->db = new PDO('mysql:host=localhost;dbname=tienda computacion;charset=utf8', 'root', '');
     }
 
+    //funciones para procesadores
+
     public function getAllProcesadores(){
         $query = $this->db->prepare('SELECT * FROM procesadores ORDER BY Marca ASC');
         $query->execute();
-
         return $query->fetchAll(PDO::FETCH_OBJ);
     }
 
@@ -23,5 +24,59 @@ class ProductsModel {
     public function deleteProcesador($idProcesador){
         $query = $this->db->prepare('DELETE FROM procesadores WHERE ID_procesadores = ?');
         $query->execute([$idProcesador]); 
+    }
+
+    //funciones para graficas
+
+    public function getAllGraficas(){
+        $query = $this->db->prepare('SELECT * FROM graficas ORDER BY Marca ASC');
+        $query->execute();
+        return $query->fetchAll(PDO::FETCH_OBJ);
+    }
+
+    public function saveGrafica($marca, $modelo, $vram, $valor) {
+        $query = $this->db->prepare('INSERT INTO graficas(ID_graficas, Marca, Modelo, Vram, Valor) VALUES(NULL,?,?,?,?)');
+        $query->execute([$marca, $modelo, $vram, $valor]); 
+    }
+
+    public function deleteGrafica($idGrafica){
+        $query = $this->db->prepare('DELETE FROM graficas WHERE ID_graficas = ?');
+        $query->execute([$idGrafica]); 
+    }
+
+    //funciones para rams
+
+    public function getAllRams(){
+        $query = $this->db->prepare('SELECT * FROM rams ORDER BY Marca ASC');
+        $query->execute();
+        return $query->fetchAll(PDO::FETCH_OBJ);
+    }
+
+    public function saveRam($marca, $tamaño, $velocidad, $generacion, $valor){
+        $query = $this->db->prepare('INSERT INTO rams(ID_RAM, Marca, Tamaño, Velocidad, Generacion, Valor) VALUES(NULL,?,?,?,?,?)');
+        $query->execute([$marca, $tamaño, $velocidad, $generacion, $valor]);
+    }
+
+    public function deleteRam($idRam){
+        $query = $this->db->prepare('DELETE FROM rams WHERE ID_RAM = ?');
+        $query->execute([$idRam]);
+    }
+
+    //funciones para gabinetes
+
+    public function getAllGabinetes(){
+        $query = $this->db->prepare('SELECT * FROM gabinetes ORDER BY Marca ASC');
+        $query->execute();
+        return $query->fetchAll(PDO::FETCH_OBJ);
+    }
+
+    public function saveGabinete($marca, $modelo, $tamaño, $valor){
+        $query = $this->db->prepare('INSERT INTO gabinetes(ID_gabinete, Marca, Modelo, Tamaño, Valor) VALUES(NULL,?,?,?,?)');
+        $query->execute([$marca, $modelo, $tamaño, $valor]);
+    }
+
+    public function deleteGabinete($idGabinete){
+        $query = $this->db->prepare('DELETE FROM gabinetes WHERE ID_gabinete = ?');
+        $query->execute([$idGabinete]);
     }
 }

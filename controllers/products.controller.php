@@ -46,5 +46,17 @@
         public function showProcesadores(){
             $this->view->showArticuloProcesadores();
         }
+
+        public function showGraficas(){
+            $this->view->showArticuloGraficas();
+        }
+
+        public function showRams(){
+            $this->view->showArticuloRams();
+        }
+
+        public function showGabinetes(){
+            $this->view->showArticuloGabinetes();
+        }
     }
 
