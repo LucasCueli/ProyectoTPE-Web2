@@ -1,4 +1,19 @@
-<?php 
-    include_once('header.tpl'); 
-?>
-<div class="titulo"><h3>Nuestros Gabinetes:</h3></div>
+<div class="formulario-productos">
+    <div class="producto">
+        <form action="addGabinete" method="POST">
+            <input type="text" name="marcaGabinete">Ingrese marca del gabinete</input>
+            <input type="text" name="modeloGabinete">Ingrese modelo del gabinete</input>
+            <input type="text" name="tamañoGabinete">Ingrese tamaño del gabinete</input>
+            <input type="text" name="valorGabinete">Ingrese valor del gabinete (USD)</input>
+            <input type="submit">Agregar</input>
+        </form>
+    </div>
+</div>
+<div class="formulario-productos">
+    <div class="producto">  
+        <form action="deleteGabinete" method="POST">
+            <input type="text" name="idGabinete">ingrese id del gabinete que desea eliminar</input>
+            <input type="submit">Eliminar</input>
+        </form>
+    </div>
+</div>

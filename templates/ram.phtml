@@ -1,4 +1,20 @@
-<?php 
-    include_once('header.tpl'); 
-?>
-<div class="titulo"><h3>Nuestras Memorias RAM:</h3></div>
+<div class="formulario-productos">
+    <div class="producto">
+        <form action="addRam" method="POST">
+            <input type="text" name="marcaRam">ingrese marca de la RAM</input>
+            <input type="text" name="tamañoRam">ingrese el tamaño de RAM (GB)</input>
+            <input type="text" name="velocidadRam">ingrese velocidad de la RAM (MHz)</input>
+            <input type="text" name="generacionRam">ingrese generacion de la RAM</input>
+            <input type="text" name="valorRam">ingrese valor de la RAM (USD)</input>
+            <input type="submit">Agregar</input>
+        </form>
+    </div>
+</div>
+<div class="formulario-productos">
+    <div class="producto">  
+        <form action="deleteRam" method="POST">
+            <input type="text" name="idRam">ingrese id de la RAM que desea eliminar</input>
+            <input type="submit">Eliminar</input>
+        </form>
+    </div>
+</div>

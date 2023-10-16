@@ -16,7 +16,7 @@ class ProductsModel {
         return $query->fetchAll(PDO::FETCH_OBJ);
     }
 
-    public function saveProcesador($marca, $modelo, $socket, $valor) {
+    public function addProcesador($marca, $modelo, $socket, $valor) {
         $query = $this->db->prepare('INSERT INTO procesadores(ID_procesadores, Marca, Modelo, Socket, Valor) VALUES(NULL,?,?,?,?)');
         $query->execute([$marca, $modelo, $socket, $valor]); 
     }
@@ -34,7 +34,7 @@ class ProductsModel {
         return $query->fetchAll(PDO::FETCH_OBJ);
     }
 
-    public function saveGrafica($marca, $modelo, $vram, $valor) {
+    public function addGrafica($marca, $modelo, $vram, $valor) {
         $query = $this->db->prepare('INSERT INTO graficas(ID_graficas, Marca, Modelo, Vram, Valor) VALUES(NULL,?,?,?,?)');
         $query->execute([$marca, $modelo, $vram, $valor]); 
     }
@@ -52,7 +52,7 @@ class ProductsModel {
         return $query->fetchAll(PDO::FETCH_OBJ);
     }
 
-    public function saveRam($marca, $tamaño, $velocidad, $generacion, $valor){
+    public function addRam($marca, $tamaño, $velocidad, $generacion, $valor){
         $query = $this->db->prepare('INSERT INTO rams(ID_RAM, Marca, Tamaño, Velocidad, Generacion, Valor) VALUES(NULL,?,?,?,?,?)');
         $query->execute([$marca, $tamaño, $velocidad, $generacion, $valor]);
     }
@@ -70,7 +70,7 @@ class ProductsModel {
         return $query->fetchAll(PDO::FETCH_OBJ);
     }
 
-    public function saveGabinete($marca, $modelo, $tamaño, $valor){
+    public function addGabinete($marca, $modelo, $tamaño, $valor){
         $query = $this->db->prepare('INSERT INTO gabinetes(ID_gabinete, Marca, Modelo, Tamaño, Valor) VALUES(NULL,?,?,?,?)');
         $query->execute([$marca, $modelo, $tamaño, $valor]);
     }

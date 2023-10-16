@@ -45,21 +45,63 @@
             }
         }
 
-        //funciones para mostrar los articulos de los productos
-        public function showProcesadores(){
-            $this->view->showArticuloProcesadores();
+        //funciones para cambios en la base de datos
+        //
+        //procesadores
+        public function agregarProcesador(){
+            $marca = $_POST['marcaProce'];
+            $modelo = $_POST['modeloProce'];
+            $socket = $_POST['socketProce'];
+            $valor = $_POST['valorProce'];
+            $this->model->addProcesador($marca, $modelo, $socket, $valor);
         }
 
-        public function showGraficas(){
-            $this->view->showArticuloGraficas();
+        public function borrarProcesador(){
+            $idProcesador = $_POST['idProce'];
+            $this->model->deleteProcesador($idProcesador);      
         }
 
-        public function showRams(){
-            $this->view->showArticuloRams();
+        //graficas
+        public function agregarGrafica(){
+            $marca = $_POST['marcaGrafica'];
+            $modelo = $_POST['modeloGrafica'];
+            $vram = $_POST['vramGrafica'];
+            $valor = $_POST['valorGrafica'];
+            $this->model->addGrafica($marca, $modelo, $vram, $valor);
         }
 
-        public function showGabinetes(){
-            $this->view->showArticuloGabinetes();
+        public function borrarGrafica(){
+            $idGrafica = $_POST['idGraf'];
+            $this->model->deleteGrafica($idGrafica);      
+        }
+
+        //rams
+        public function agregarRam(){
+            $marca = $_POST['marcaRam'];
+            $tamaño = $_POST['tamañoRam'];
+            $velocidad = $_POST['velocidadRam'];
+            $generacion = $_POST['generacionRam'];
+            $valor = $_POST['valorRam'];
+            $this->model->addRam($marca, $tamaño, $velocidad, $generacion, $valor);
+        }
+
+        public function borrarRam(){
+            $idRam = $_POST['idRam'];
+            $this->model->deleteRam($idRam);
+        }
+
+        //gabinetes
+        public function agregarGabinete(){
+            $marca = $_POST['marcaGabinete'];
+            $modelo = $_POST['modeloGabinete'];
+            $tamaño = $_POST['tamañoGabinete'];
+            $valor = $_POST['valorGabinete'];
+            $this->model->addGabinete($marca, $modelo, $tamaño, $valor);
+        }
+
+        public function borrarGabinete(){
+            $idGabinete = $_POST['idGabinete'];
+            $this->model->deleteGabinete($idGabinete);
         }
     }
 

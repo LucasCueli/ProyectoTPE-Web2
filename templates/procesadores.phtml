@@ -1,4 +1,19 @@
-<?php 
-    include_once('header.tpl'); 
-?>
-<div class="titulo"><h3>Nuestros Procesadores:</h3></div>
+<div class="formulario-productos">
+    <div class="producto">
+        <form action="addProcesador" method="POST">
+            <input type="text" name="marcaProce">Ingrese marca del procesador</input>
+            <input type="text" name="modeloProce">Ingrese modelo del procesador</input>
+            <input type="text" name="socketProce">Ingrese socket del procesador</input>
+            <input type="text" name="valorProce">Ingrese valor del procesador (USD)</input>
+            <input type="submit">Agregar</input>
+        </form>
+    </div>
+</div>
+<div class="formulario-productos">
+    <div class="producto">  
+        <form action="deleteProcesador" method="POST">
+            <input type="text" name="idProce">ingrese id del procesador que desea eliminar</input>
+            <input type="submit">Eliminar</input>
+        </form>
+    </div>
+</div>

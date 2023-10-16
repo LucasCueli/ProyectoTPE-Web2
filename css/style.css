@@ -214,3 +214,12 @@ footer {
     text-align: center;
     padding: 10px 0;
 }
+
+/* formulario de los productos */
+.formulario-productos{
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}

@@ -21,27 +21,70 @@
         case 'procesadores':
             $controller = new ProductController();
             $controller->mostrarProcesadores();
-            $controller->showProcesadores();
+            $controller->checkLoggedIn();
+            break;
+        case 'addProcesador':
+            $controller = new ProductController();
+            $controller->agregarProcesador();
+            $controller->mostrarProcesadores();
+            $controller->checkLoggedIn();
+            break;
+        case 'deleteProcesador':
+            $controller = new ProductController();
+            $controller->borrarProcesador();
+            $controller->mostrarProcesadores();
             $controller->checkLoggedIn();
             break;
         case 'placas':
             $controller = new ProductController();
             $controller->mostrarPlacas();
-            $controller->showGraficas();
+            $controller->checkLoggedIn();
+            break;
+        case 'addGrafica':
+            $controller = new ProductController();
+            $controller->agregarGrafica();
+            $controller->mostrarPlacas();
+            $controller->checkLoggedIn();
+            break;
+        case 'deleteGrafica':
+            $controller = new ProductController();
+            $controller->borrarGrafica();
+            $controller->mostrarPlacas();
             $controller->checkLoggedIn();
             break;
         case 'rams':
             $controller = new ProductController();
             $controller->mostrarRams();
-            $controller->showRams();
+            $controller->checkLoggedIn();
+            break;
+        case 'addRam':
+            $controller = new ProductController();
+            $controller->agregarRam();
+            $controller->mostrarRams();
+            $controller->checkLoggedIn();
+            break;
+        case 'deleteRam':
+            $controller = new ProductController();
+            $controller->borrarRam();
+            $controller->mostrarRams();
             $controller->checkLoggedIn();
             break;
         case 'gabinetes':
             $controller = new ProductController();
             $controller->mostrarGabinetes();
-            $controller->showGabinetes();
             $controller->checkLoggedIn();
             break;
+        case 'addGabinete':
+            $controller = new ProductController();
+            $controller->agregarGabinete();
+            $controller->mostrarGabinetes();
+            $controller->checkLoggedIn();
+            break;
+        case 'deleteGabinete':
+            $controller = new ProductController();
+            $controller->borrarGabinete();
+            $controller->mostrarGabinetes();
+            $controller->checkLoggedIn();
         case 'nosotros':
             $controller = new ProductController();
             $controller->mostrarNosotros();
