@@ -24,6 +24,10 @@
         public function showPageNosotros(){
             require('./templates/nosotros.phtml');
         }
+
+        public function showProcesadores(){
+            
+        }
     }
 
 ?>

@@ -58,6 +58,9 @@
             $controller = new LoginController();
             $controller->register();
             break;
+        case 'user_register':
+            $controller = new LoginController();
+            $controller->userRegister();
         default:
             echo "<h1>Error 404 - Page not found </h1>";
             break;

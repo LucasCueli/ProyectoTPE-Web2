@@ -40,6 +40,18 @@ class LoginController {
         }
     }
 
+    public function userRegister(){
+        if(!empty($_POST['email'])&& !empty($_POST['password'])){
+            $userEmail=$_POST['email'];
+            $userPassword=password_hash($_POST['password'], PASSWORD_BCRYPT);
+            $this->model->addUsuario($userEmail, $userPassword);
+
+            header('Location: ' . LOGIN);
+        }
+    }
+
+    
+
     public function logout() {
         session_start();
         session_destroy();

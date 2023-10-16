@@ -14,6 +14,11 @@
             return $query->fetch(PDO::FETCH_OBJ);
         }
 
-        
+        public function addUsuario($userEmail,$userPassword){
+            //Guardo el nuevo usuario en la base de datos
+            $db = new PDO('mysql:host=localhost;'.'dbname=tienda computacion;charset=utf8', 'root', '');
+            $query = $this->db->prepare('INSERT INTO usuarios (email, password) VALUES (? , ?)');
+            $query->execute([$userEmail,$userPassword]);     
+        }        
 
     }
