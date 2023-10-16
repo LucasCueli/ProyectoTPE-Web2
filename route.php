@@ -21,6 +21,7 @@
         case 'procesadores':
             $controller = new ProductController();
             $controller->mostrarProcesadores();
+            $controller->showProcesadores();
             $controller->checkLoggedIn();
             break;
         case 'placas':

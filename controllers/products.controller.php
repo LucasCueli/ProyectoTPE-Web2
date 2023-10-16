@@ -44,8 +44,7 @@
         }
 
         public function showProcesadores(){
-            $procesadores = $this->model->getAllProcesadores();
-            $this->view->showProcesadores();
+            $this->view->showArticuloProcesadores();
         }
     }
 
