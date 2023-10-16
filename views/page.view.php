@@ -36,7 +36,7 @@
             $procesadores = $this->model->getAllProcesadores();
             foreach($procesadores as $proce){
                 echo '<article class="producto">' . $proce->Marca . '<h2>' . $proce->Modelo . '</h2>'
-                .  '<p>' . $proce->Socket . ', ' . $proce->Valor . '</p>' .'</article>';
+                .  '<p>' . $proce->Socket . '<br>' . $proce->Valor . '</p>' .'</article>';
             }
             echo '</section>';
         }

@@ -1,32 +1,50 @@
-/* Estilos generales del header y la pagina */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: white;
+/* Estilos body */
+body{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
 
+/* Aplicamos estilos al encabezado (header) */
 header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background-color: #222831;
-    color: rgb(252, 252, 252);
-    text-align: center;
-    padding: 20px 0;
-}
-
-nav ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin-right: 20px;
-}
-
-nav a {
-    text-decoration: none;
     color: #fff;
-    margin-right: 30px;
+    padding: 10px;
+}
+
+a{
+    text-decoration: none;
+}
+
+/* Estilos para el logo */
+.logo img {
+    max-width: 100px; /* Ajusta el tamaño según tu necesidad */
+}
+
+/* Estilos para los enlaces */
+.enlaces {
+    flex: 1; /* Los enlaces ocuparán el espacio restante en el centro */
+    text-align: center;
+}
+
+.enlaces a {
+    color: #fff;
+    margin: 0 20px; /* Espacio entre enlaces */
+    font-size: 20px;
+}
+
+/* Estilos para el botón de inicio de sesión */
+.login a {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.login a:hover {
+    background-color: #0056b3; /* Cambia el color al pasar el ratón sobre el botón */
 }
 
 /* Estilos de la sección de Index */
@@ -56,7 +74,6 @@ nav a {
     border: 2px solid #ffdd20;
     border-radius: 0px;
     padding: 18px 36px;
-    display: inline-block;
     font-family: "Lucida Console", Monaco, monospace;
     font-size: 14px;
     letter-spacing: 1px;
@@ -75,6 +92,18 @@ nav a {
     width: 364px;
     margin: 50px auto 0 auto;
     text-align: center;
+}
+
+
+
+/* Estilos login */
+
+.Usuarios{
+    padding: 100px;
+    background-color: #ffdd20;
+    justify-content: center;
+    display: grid;
+    gap: 25px;
 }
 
 /* Estilos del footer */
