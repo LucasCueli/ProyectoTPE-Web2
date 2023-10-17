@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 16-10-2023 a las 19:01:45
+-- Tiempo de generación: 17-10-2023 a las 04:39:05
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.0.28
 
@@ -78,7 +78,8 @@ CREATE TABLE `graficas` (
 --
 
 INSERT INTO `graficas` (`ID_graficas`, `Marca`, `Modelo`, `Vram`, `Valor`) VALUES
-(10002, 'NVIDIA', 'GeForce RTX 3080', '10GB GDDR6X', 420);
+(10002, 'NVIDIA', 'GeForce RTX 3080', '10GB GDDR6X', 420),
+(10003, 'MSI ', 'GeForce RTX 3060', '12GB', 290);
 
 -- --------------------------------------------------------
 
@@ -99,8 +100,7 @@ CREATE TABLE `procesadores` (
 --
 
 INSERT INTO `procesadores` (`ID_procesadores`, `Marca`, `Modelo`, `Socket`, `Valor`) VALUES
-(1, 'Intel', 'i7 12700', 'FCLGA1700', 360),
-(2, 'Intel', 'i7-10700', 'LGA 1200', 323);
+(6, 'Intel', 'i7-12700KF', 'LGA 1700', 260);
 
 -- --------------------------------------------------------
 
@@ -198,25 +198,25 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `gabinetes`
 --
 ALTER TABLE `gabinetes`
-  MODIFY `ID_gabinete` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `ID_gabinete` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `graficas`
 --
 ALTER TABLE `graficas`
-  MODIFY `ID_graficas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10003;
+  MODIFY `ID_graficas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10005;
 
 --
 -- AUTO_INCREMENT de la tabla `procesadores`
 --
 ALTER TABLE `procesadores`
-  MODIFY `ID_procesadores` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `ID_procesadores` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `rams`
 --
 ALTER TABLE `rams`
-  MODIFY `ID_RAM` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `ID_RAM` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
